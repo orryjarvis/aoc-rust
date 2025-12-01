@@ -65,10 +65,10 @@ fn day1(filename: &str, start_position: i32) -> Result<(i32, i32), Box<dyn error
                         *zeroes += 1;
                     }
                     *zeroes += p / -100;
-                    p = 100 + p;
+                    p = 100 + (p % 100);
                 }
                 else {
-                    * zeroes += p / 100;
+                    *zeroes += p / 100;
                 }
                 *position = p % 100;
                 Some((rotation, *position, *zeroes))
